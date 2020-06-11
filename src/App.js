@@ -1,29 +1,24 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route} from 'react-router-dom'
 import Todos from './components/Todos';
 import Title from './components/layout/addtitle'
 import AddTodo from './components/addtodo'
+import About from './components/pages/about';
+// import {v4 as uuid} from 'uuid'
+import axios from 'axios';
+
+
 import './App.css';
 
 class App extends Component {
   state = {
-    todos: [
-      {
-        id:1,
-        title: 'This is awesome',
-        completed: false
-      },
-      {
-        id:2,
-        title: 'I am learning',
-        completed: false
-      },
-      {
-        id:3,
-        title: 'React is the bomb',
-        completed: false
-      }
-    ]
+    todos: []
   };
+
+  componentDidMount(){
+    axios.get('https://jsonplaceholder.typicode.com/todos?_limit=10')
+    .then(res => this.setState({todos: res.data}))
+  }
 
   markComplete = (id) =>{
     this.setState({todos: this.state.todos.map((todo)=>{
@@ -36,16 +31,32 @@ class App extends Component {
   }
 
   deleteItem = (id) =>{
-    this.setState({todos: [...this.state.todos.filter(todo => todo.id !== id)]})
+    axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`)
+    .then(res => this.setState({todos: [...this.state.todos.filter(todo => todo.id !== id)]}))
+  }
+  addTodo = (title)=>{
+    axios.post('https://jsonplaceholder.typicode.com/todos', {
+      title,
+      completed: false
+    })
+    .then(res => this.setState({todos: [...this.state.todos, res.data]}))
   }
 
   render(){
     return (
-      <div className="App">
-        <Title />
-        <AddTodo />
-        <Todos todos={this.state.todos} markComplete={this.markComplete} deleteItem={this.deleteItem}/>
-      </div>
+      <Router>
+        <div className="App">
+          <Title />
+          <Route exact path='/' render={props =>(
+            <React.Fragment>
+              <AddTodo addTodo ={this.addTodo} />
+              <Todos todos={this.state.todos} markComplete={this.markComplete} deleteItem={this.deleteItem}/>
+            </React.Fragment>
+          )}/>
+          <Route path='/about' component={About}/>
+        </div>
+      </Router>
+      
     );
   }
 }

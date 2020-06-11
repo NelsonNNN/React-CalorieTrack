@@ -8,10 +8,12 @@ class Todos extends Component {
     <TodoItem key={todo.id} todo={todo} markComplete={this.props.markComplete} deleteItem={this.props.deleteItem}/>
     ))
  }
-}
+} 
 
 Todos.propTypes={
-    todos: PropTypes.array.isRequired
+    todos: PropTypes.array.isRequired,
+    markComplete: PropTypes.func.isRequired,
+    deleteItem: PropTypes.func.isRequired
 }
 
 export default Todos;
