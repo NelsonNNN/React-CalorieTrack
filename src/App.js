@@ -1,64 +1,49 @@
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Route} from 'react-router-dom'
-import Todos from './components/Todos';
-import Title from './components/layout/addtitle'
-import AddTodo from './components/addtodo'
-import About from './components/pages/about';
-// import {v4 as uuid} from 'uuid'
-import axios from 'axios';
+import React, {useState, useEffect} from 'react';
+import Additem from './components/Additem';
+import Items from './components/Items';
+import {getFromStorage, storeInStorage} from './components/Storage'
+import { uuid } from 'uuidv4';
 
 
-import './App.css';
+function App() {
 
-class App extends Component {
-  state = {
-    todos: []
-  };
+  const initialState =() => getFromStorage('data') || []
+  const [state, changeState] = useState(initialState)
+  const [data, changeData] = useState({name:'', calories:''})
+  
 
-  componentDidMount(){
-    axios.get('https://jsonplaceholder.typicode.com/todos?_limit=10')
-    .then(res => this.setState({todos: res.data}))
+  useEffect(() => {
+    storeInStorage('data', state);
+  }, [state]);
+
+  const addItem = (item)=> {
+    item.id = uuid()
+    const newItems = [...state, item]
+    changeState(newItems)
   }
 
-  markComplete = (id) =>{
-    this.setState({todos: this.state.todos.map((todo)=>{
-      if(todo.id === id){
-        todo.completed = !todo.completed
+  const onEditItem = (states) => {
+    changeData({...data, name:states.name, calories:states.calories})
+}
+  
+  const updateItem = (stuff)=>{
+    changeState([state.map((item) => {
+      if(stuff.id === item.id){
+        item = stuff
       }
-      return todo;
-      })
-    })
+      return item
+    })])
+  }
+  const deleteItem = (id) =>{
+    changeState({...state.filter(todo => todo.id !== id)})
   }
 
-  deleteItem = (id) =>{
-    axios.delete(`https://jsonplaceholder.typicode.com/todos/${id}`)
-    .then(res => this.setState({todos: [...this.state.todos.filter(todo => todo.id !== id)]}))
-  }
-  addTodo = (title)=>{
-    axios.post('https://jsonplaceholder.typicode.com/todos', {
-      title,
-      completed: false
-    })
-    .then(res => this.setState({todos: [...this.state.todos, res.data]}))
-  }
-
-  render(){
-    return (
-      <Router>
-        <div className="App">
-          <Title />
-          <Route exact path='/' render={props =>(
-            <React.Fragment>
-              <AddTodo addTodo ={this.addTodo} />
-              <Todos todos={this.state.todos} markComplete={this.markComplete} deleteItem={this.deleteItem}/>
-            </React.Fragment>
-          )}/>
-          <Route path='/about' component={About}/>
-        </div>
-      </Router>
-      
-    );
-  }
+  return (
+    <div>
+      <Additem addItem={addItem} updateItem={updateItem} deleteItem={deleteItem} data={data} />
+      <Items state={state} onEditItem={onEditItem} />
+    </div>
+  )
 }
 
-export default App;
+export default App
