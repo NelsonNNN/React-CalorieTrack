@@ -9,7 +9,7 @@ function App() {
 
   const initialState =() => getFromStorage('data') || []
   const [state, changeState] = useState(initialState)
-  const [data, changeData] = useState({name:'', calories:''})
+  const [data, changeData] = useState({name:'', calories:'', id:null})
   
 
   useEffect(() => {
@@ -23,19 +23,20 @@ function App() {
   }
 
   const onEditItem = (states) => {
-    changeData({...data, name:states.name, calories:states.calories})
+    changeData({...data, name:states.name, calories:states.calories, id:states.id})
 }
   
   const updateItem = (stuff)=>{
-    changeState([state.map((item) => {
+    
+    changeState(state.map((item) => {
       if(stuff.id === item.id){
         item = stuff
       }
       return item
-    })])
+    }))
   }
   const deleteItem = (id) =>{
-    changeState({...state.filter(todo => todo.id !== id)})
+    changeState([...state.filter(todo => todo.id !== id)])
   }
 
   return (

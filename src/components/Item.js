@@ -5,7 +5,8 @@ import PropTypes from 'prop-types'
 function Item(props) {
     const initialState = {
         name:props.item.name,
-        calories: props.item.calories
+        calories: props.item.calories,
+        id:props.item.id
     }
     const editItem = (e) =>{
         e.preventDefault()

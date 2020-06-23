@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 const firstState = {
         name:'',
         calories:'',
+        id:null
 }
 
 function Additem(props) {
@@ -15,6 +16,7 @@ function Additem(props) {
     }
     useEffect(()=>{
         changeState({...state, name:props.data.name, calories:props.data.calories, id:props.data.id})
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [props.data])
 
     const onSubmit = ()=>{
@@ -28,7 +30,7 @@ function Additem(props) {
     }
 
     const onDelete = ()=>{
-        props.deleteItem(state)
+        props.deleteItem(state.id)
         changeState(firstState)
     }
     
