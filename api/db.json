@@ -1,0 +1,14 @@
+{
+  "data": [
+    {
+      "name": "Skuma",
+      "calories": "700",
+      "id": 1
+    },
+    {
+      "name": "Ugali",
+      "calories": "3000",
+      "id": 2
+    }
+  ]
+}

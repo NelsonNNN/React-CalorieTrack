@@ -2,8 +2,7 @@ import React, {useState, useEffect} from 'react';
 import Additem from './components/Additem';
 import Items from './components/Items';
 import {getFromStorage, storeInStorage} from './components/Storage'
-import { uuid } from 'uuidv4';
-
+import {http} from './components/easyHttp'
 
 function App() {
 
@@ -11,15 +10,22 @@ function App() {
   const [state, changeState] = useState(initialState)
   const [data, changeData] = useState({name:'', calories:'', id:null})
   
+  http.get('http://localhost:3001/data')
+  .then(items => {
+    if(items.length === 0){
+      if(initialState.length !==0){
+        initialState.forEach(item =>http.post('http://localhost:3001/data', item)).then(list => console.log(list))
+      }
+    }
+  })
 
   useEffect(() => {
-    storeInStorage('data', state);
+    storeInStorage('data', state)
   }, [state]);
 
   const addItem = (item)=> {
-    item.id = uuid()
-    const newItems = [...state, item]
-    changeState(newItems)
+    http.post('http://localhost:3001/data', item)
+    .then(items =>{const newItems = [...state, items]; changeState(newItems)})
   }
 
   const onEditItem = (states) => {
@@ -27,15 +33,16 @@ function App() {
 }
   
   const updateItem = (stuff)=>{
-    
     changeState(state.map((item) => {
       if(stuff.id === item.id){
+        http.put(`http://localhost:3001/data/${item.id}`, stuff)
         item = stuff
       }
       return item
     }))
   }
   const deleteItem = (id) =>{
+    http.delete(`http://localhost:3001/data/${id}`)
     changeState([...state.filter(todo => todo.id !== id)])
   }
 
