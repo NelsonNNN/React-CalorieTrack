@@ -48,6 +48,13 @@ function App() {
 
   return (
     <div>
+      <nav>
+        <div className="nav-wrapper blue">
+            <div className="container">
+                <a href="nelsonnnn.github.io" className="brand-logo">Store The Calories Info on any Food item</a>
+            </div>
+        </div>
+      </nav><br/>
       <Additem addItem={addItem} updateItem={updateItem} deleteItem={deleteItem} data={data} />
       <Items state={state} onEditItem={onEditItem} />
     </div>
