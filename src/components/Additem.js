@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 const firstState = {
         name:'',
-        calories:'',
+        content:'',
         id:null
 }
 
@@ -20,7 +20,7 @@ function Additem(props) {
     }
     const isFirstRun = useRef(false)
     useEffect(()=>{
-        changeState({...state, name:props.data.name, calories:props.data.calories, id:props.data.id})
+        changeState({...state, name:props.data.name, content:props.data.content, id:props.data.id})
         if(isFirstRun.current){
             add.current.style.display = "none";
             update.current.style.display = "inline";
@@ -57,16 +57,16 @@ function Additem(props) {
     return (
         <div>
             <div className="input-field col s6">
-                <input className='food-name' type='text' name='name' placeholder='Add FoodItem' value={state.name} onChange={onType}/>
+                <input type='text' name='name' placeholder='Add FoodItem' value={state.name} onChange={onType}/>
                 <label>Meal</label>
             </div>
             <div className="input-field col s6">
-                <input className={'calories-name'} type='number' name='calories' placeholder='Add Calories' value={state.calories} onChange={onType}/>
-                <label>Calories</label>
+                <input type="text" name='content' placeholder='Add content' value={state.content} onChange={onType}/>
+                <label>Content</label>
             </div>
-            <button style={{display:'inline'}} ref={add} onClick={onSubmit} className="add-btn btn blue darken-3"><i className="fa fa-plus">Add Meal</i></button>
-            <button style={{display:'none'}}  ref={update} onClick={onUpdate} className="update-btn btn orange"><i className="fa fa-pencil-square-o">Update Meal</i></button>
-            <button style={{display:'none'}}  ref={deleted} onClick={onDelete} className="delete-btn btn red"><i className="fa fa-remove">Delete Meal</i></button>
+            <button style={{display:'inline', marginRight:'1rem'}} ref={add} onClick={onSubmit} className="add-btn btn blue darken-3">Add Blog</button>
+            <button style={{display:'none',marginRight:'1rem'}}  ref={update} onClick={onUpdate} className="update-btn btn orange">Update Blog</button>
+            <button style={{display:'none',marginRight:'1rem'}}  ref={deleted} onClick={onDelete} className="delete-btn btn red">Delete Blog</button>
         </div>
     )
 }

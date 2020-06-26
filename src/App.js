@@ -3,12 +3,21 @@ import Additem from './components/Additem';
 import Items from './components/Items';
 import {getFromStorage, storeInStorage} from './components/Storage'
 import {http} from './components/easyHttp'
+import Pagination from './components/Pagination';
 
 function App() {
 
   const initialState =() => getFromStorage('data') || []
   const [state, changeState] = useState(initialState)
-  const [data, changeData] = useState({name:'', calories:'', id:null})
+  const [data, changeData] = useState({name:'', content:'', id:null})
+  const [currentPage, setCurrentPage] = useState(1)
+  const [postPerPage] = useState(5)
+
+  const indexOfLastPost = currentPage * postPerPage;
+  const indexOfFirstPost = indexOfLastPost - postPerPage;
+  const currentState = state.slice(indexOfFirstPost, indexOfLastPost)
+
+  const paginate = pageNumber => setCurrentPage(pageNumber);
   
   http.get('http://localhost:3001/data')
   .then(items => {
@@ -29,7 +38,7 @@ function App() {
   }
 
   const onEditItem = (states) => {
-    changeData({...data, name:states.name, calories:states.calories, id:states.id})
+    changeData({...data, name:states.name, content:states.content, id:states.id})
 }
   
   const updateItem = (stuff)=>{
@@ -51,12 +60,13 @@ function App() {
       <nav>
         <div className="nav-wrapper blue">
             <div className="container">
-                <a href="nelsonnnn.github.io" className="brand-logo">Store The Calories Info on any Food item</a>
+                <a href="nelsonnnn.github.io" className="brand-logo">Create Blog and Edit</a>
             </div>
         </div>
       </nav><br/>
       <Additem addItem={addItem} updateItem={updateItem} deleteItem={deleteItem} data={data} />
-      <Items state={state} onEditItem={onEditItem} />
+      <Items state={currentState} onEditItem={onEditItem}/>
+      <Pagination postsPerPage={postPerPage} totalPosts={state.length} paginate={paginate} />
     </div>
   )
 }
