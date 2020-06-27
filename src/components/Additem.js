@@ -57,16 +57,16 @@ function Additem(props) {
     return (
         <div>
             <div className="input-field col s6">
-                <input type='text' name='name' placeholder='Add FoodItem' value={state.name} onChange={onType}/>
-                <label>Meal</label>
+                <input type='text' name='name' placeholder='Add Title' value={state.name} onChange={onType}/>
+                <label>Title</label>
             </div>
             <div className="input-field col s6">
                 <input type="text" name='content' placeholder='Add content' value={state.content} onChange={onType}/>
                 <label>Content</label>
             </div>
-            <button style={{display:'inline', marginRight:'1rem'}} ref={add} onClick={onSubmit} className="add-btn btn blue darken-3">Add Blog</button>
-            <button style={{display:'none',marginRight:'1rem'}}  ref={update} onClick={onUpdate} className="update-btn btn orange">Update Blog</button>
-            <button style={{display:'none',marginRight:'1rem'}}  ref={deleted} onClick={onDelete} className="delete-btn btn red">Delete Blog</button>
+            <button style={{display:'inline', marginRight:'1rem'}} ref={add} onClick={onSubmit} className="add-btn btn green darken-1">Add Blog</button>
+            <button style={{display:'none',marginRight:'1rem'}}  ref={update} onClick={onUpdate} className="update-btn btn  lime darken-1">Update Blog</button>
+            <button style={{display:'none',marginRight:'1rem'}}  ref={deleted} onClick={onDelete} className="delete-btn btn  blue-grey darken-4">Delete Blog</button>
         </div>
     )
 }
