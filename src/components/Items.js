@@ -3,6 +3,9 @@ import Item from './Item'
 import PropTypes from 'prop-types'
 
 function Items(props) {
+    if(props.loading){
+        return<h2>Loading posts...</h2>
+    }
 
     return (
             <ul>

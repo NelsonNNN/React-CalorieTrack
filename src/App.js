@@ -16,13 +16,16 @@ function App() {
   const indexOfLastPost = currentPage * postPerPage;
   const indexOfFirstPost = indexOfLastPost - postPerPage;
   const currentState = state.slice(indexOfFirstPost, indexOfLastPost)
+  const [loading, setLoading] = useState(false)
 
   const paginate = pageNumber => setCurrentPage(pageNumber);
 
   useEffect(()=>{
+    setLoading(true)
     get('https://jsonplaceholder.typicode.com/posts')
     .then(items => {
       changeState(items.sort((a,b)=>b.id-a.id))
+      setLoading(false)
     })
   },[])
 
@@ -59,7 +62,7 @@ function App() {
         </div>
       </nav><br/>
       <Additem addItem={addItem} updateItem={updateItem} deleteItem={deleteItem} data={data} />
-      <Items state={currentState} onEditItem={onEditItem}/>
+      <Items state={currentState} onEditItem={onEditItem} loading={loading}/>
       <Pagination postsPerPage={postPerPage} totalPosts={state.length} paginate={paginate} />
     </div>
   )
