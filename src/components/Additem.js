@@ -2,8 +2,8 @@ import React, {useState, useEffect, useRef} from 'react'
 import PropTypes from 'prop-types'
 
 const firstState = {
-        name:'',
-        content:'',
+        title:'',
+        body:'',
         id:null
 }
 
@@ -20,7 +20,7 @@ function Additem(props) {
     }
     const isFirstRun = useRef(false)
     useEffect(()=>{
-        changeState({...state, name:props.data.name, content:props.data.content, id:props.data.id})
+        changeState({...state, title:props.data.title, body:props.data.body, id:props.data.id})
         if(isFirstRun.current){
             add.current.style.display = "none";
             update.current.style.display = "inline";
@@ -57,12 +57,12 @@ function Additem(props) {
     return (
         <div>
             <div className="input-field col s6">
-                <input type='text' name='name' placeholder='Add Title' value={state.name} onChange={onType}/>
+                <input type='text' name='title' placeholder='Add Title' value={state.title} onChange={onType}/>
                 <label>Title</label>
             </div>
             <div className="input-field col s6">
-                <input type="text" name='content' placeholder='Add content' value={state.content} onChange={onType}/>
-                <label>Content</label>
+                <input type="text" name='body' placeholder='Add body' value={state.body} onChange={onType}/>
+                <label>body</label>
             </div>
             <button style={{display:'inline', marginRight:'1rem'}} ref={add} onClick={onSubmit} className="add-btn btn green darken-1">Add Blog</button>
             <button style={{display:'none',marginRight:'1rem'}}  ref={update} onClick={onUpdate} className="update-btn btn  lime darken-1">Update Blog</button>

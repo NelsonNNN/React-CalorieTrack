@@ -1,15 +1,15 @@
 import React, {useState, useEffect} from 'react';
 import Additem from './components/Additem';
 import Items from './components/Items';
-import {getFromStorage, storeInStorage} from './components/Storage'
-import {http} from './components/easyHttp'
+// import {getFromStorage, storeInStorage} from './components/Storage'
+import {post, deletes, put, get} from './components/easyHttp'
 import Pagination from './components/Pagination';
 
 function App() {
 
-  const initialState =() => getFromStorage('data') || []
+  const initialState = []
   const [state, changeState] = useState(initialState)
-  const [data, changeData] = useState({name:'', content:'', id:null})
+  const [data, changeData] = useState({title:'', body:'', id:null})
   const [currentPage, setCurrentPage] = useState(1)
   const [postPerPage] = useState(5)
 
@@ -18,40 +18,34 @@ function App() {
   const currentState = state.slice(indexOfFirstPost, indexOfLastPost)
 
   const paginate = pageNumber => setCurrentPage(pageNumber);
-  
-  http.get('https://jsonplaceholder.typicode.com/posts')
-  .then(items => {
-    if(items.length === 0){
-      if(initialState.length !==0){
-        initialState.forEach(item =>http.post('https://jsonplaceholder.typicode.com/posts', item)).then(list => console.log(list))
-      }
-    }
-  })
 
-  useEffect(() => {
-    storeInStorage('data', state)
-  }, [state]);
+  useEffect(()=>{
+    get('https://jsonplaceholder.typicode.com/posts')
+    .then(items => {
+      changeState(items.sort((a,b)=>b.id-a.id))
+    })
+  },[])
 
   const addItem = (item)=> {
-    http.post('https://jsonplaceholder.typicode.com/posts', item)
-    .then(items =>{const newItems = [...state, items]; changeState(newItems)})
+    post('https://jsonplaceholder.typicode.com/posts', item)
+    .then(items =>{const newItems = [...state, items]; changeState(newItems.sort((a,b)=>b.id-a.id));})
   }
 
   const onEditItem = (states) => {
-    changeData({...data, name:states.name, content:states.content, id:states.id})
+    changeData({...data, title:states.title, body:states.body, id:states.id})
 }
   
   const updateItem = (stuff)=>{
     changeState(state.map((item) => {
       if(stuff.id === item.id){
-        http.put(`https://jsonplaceholder.typicode.com/posts/${item.id}`, stuff)
+        put(`https://jsonplaceholder.typicode.com/posts/${item.id}`, stuff)
         item = stuff
       }
       return item
     }))
   }
   const deleteItem = (id) =>{
-    http.delete(`https://jsonplaceholder.typicode.com/posts/${id}`)
+    deletes(`https://jsonplaceholder.typicode.com/posts/${id}`)
     changeState([...state.filter(todo => todo.id !== id)])
   }
 
