@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/React-CalorieTrack/static/js/main.c63ba4fd.chunk.js",
-    "main.js.map": "/React-CalorieTrack/static/js/main.c63ba4fd.chunk.js.map",
+    "main.js": "/React-CalorieTrack/static/js/main.0b1defe7.chunk.js",
+    "main.js.map": "/React-CalorieTrack/static/js/main.0b1defe7.chunk.js.map",
     "runtime-main.js": "/React-CalorieTrack/static/js/runtime-main.7b6bfdd9.js",
     "runtime-main.js.map": "/React-CalorieTrack/static/js/runtime-main.7b6bfdd9.js.map",
     "static/js/2.9d60634d.chunk.js": "/React-CalorieTrack/static/js/2.9d60634d.chunk.js",
     "static/js/2.9d60634d.chunk.js.map": "/React-CalorieTrack/static/js/2.9d60634d.chunk.js.map",
     "index.html": "/React-CalorieTrack/index.html",
-    "precache-manifest.e278056eeb72273c0c723a00b40ddc26.js": "/React-CalorieTrack/precache-manifest.e278056eeb72273c0c723a00b40ddc26.js",
+    "precache-manifest.90092fa5402614ca5e0c7c0fc46a14c9.js": "/React-CalorieTrack/precache-manifest.90092fa5402614ca5e0c7c0fc46a14c9.js",
     "service-worker.js": "/React-CalorieTrack/service-worker.js",
     "static/js/2.9d60634d.chunk.js.LICENSE.txt": "/React-CalorieTrack/static/js/2.9d60634d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.7b6bfdd9.js",
     "static/js/2.9d60634d.chunk.js",
-    "static/js/main.c63ba4fd.chunk.js"
+    "static/js/main.0b1defe7.chunk.js"
   ]
 }
