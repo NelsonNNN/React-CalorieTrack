@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "da1268daf8b48e2b3c8f1e1019e0ad2c",
+    "revision": "3527a6c9324261d7c320a99400648d15",
     "url": "/React-CalorieTrack/index.html"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/React-CalorieTrack/static/js/2.9498830b.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "d4d1ed86005381bd0c65",
-    "url": "/React-CalorieTrack/static/js/main.024029e6.chunk.js"
+    "revision": "1b421be68a7502ee3495",
+    "url": "/React-CalorieTrack/static/js/main.47c97736.chunk.js"
   },
   {
     "revision": "d96a588fe624c3a664f3",

@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/React-CalorieTrack/precache-manifest.b011245313bca98c0393ec373cc908ff.js"
+  "/React-CalorieTrack/precache-manifest.368adb58126a94500ae745879ecb1b21.js"
 );
 
 self.addEventListener('message', (event) => {
