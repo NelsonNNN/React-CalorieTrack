@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/React-CalorieTrack/static/js/main.31cf4f74.chunk.js",
-    "main.js.map": "/React-CalorieTrack/static/js/main.31cf4f74.chunk.js.map",
+    "main.js": "/React-CalorieTrack/static/js/main.5969a140.chunk.js",
+    "main.js.map": "/React-CalorieTrack/static/js/main.5969a140.chunk.js.map",
     "runtime-main.js": "/React-CalorieTrack/static/js/runtime-main.7b6bfdd9.js",
     "runtime-main.js.map": "/React-CalorieTrack/static/js/runtime-main.7b6bfdd9.js.map",
-    "static/js/2.9498830b.chunk.js": "/React-CalorieTrack/static/js/2.9498830b.chunk.js",
-    "static/js/2.9498830b.chunk.js.map": "/React-CalorieTrack/static/js/2.9498830b.chunk.js.map",
+    "static/js/2.9d60634d.chunk.js": "/React-CalorieTrack/static/js/2.9d60634d.chunk.js",
+    "static/js/2.9d60634d.chunk.js.map": "/React-CalorieTrack/static/js/2.9d60634d.chunk.js.map",
     "index.html": "/React-CalorieTrack/index.html",
-    "precache-manifest.79d28bfc1d004c0028b9b47d19e52181.js": "/React-CalorieTrack/precache-manifest.79d28bfc1d004c0028b9b47d19e52181.js",
+    "precache-manifest.11f49b40f8c43c5cf21e9cee2f6fb913.js": "/React-CalorieTrack/precache-manifest.11f49b40f8c43c5cf21e9cee2f6fb913.js",
     "service-worker.js": "/React-CalorieTrack/service-worker.js",
-    "static/js/2.9498830b.chunk.js.LICENSE.txt": "/React-CalorieTrack/static/js/2.9498830b.chunk.js.LICENSE.txt"
+    "static/js/2.9d60634d.chunk.js.LICENSE.txt": "/React-CalorieTrack/static/js/2.9d60634d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.7b6bfdd9.js",
-    "static/js/2.9498830b.chunk.js",
-    "static/js/main.31cf4f74.chunk.js"
+    "static/js/2.9d60634d.chunk.js",
+    "static/js/main.5969a140.chunk.js"
   ]
 }
