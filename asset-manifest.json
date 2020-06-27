@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.js": "/React-CalorieTrack/static/js/main.024029e6.chunk.js",
+    "main.js.map": "/React-CalorieTrack/static/js/main.024029e6.chunk.js.map",
+    "runtime-main.js": "/React-CalorieTrack/static/js/runtime-main.7b6bfdd9.js",
+    "runtime-main.js.map": "/React-CalorieTrack/static/js/runtime-main.7b6bfdd9.js.map",
+    "static/js/2.9498830b.chunk.js": "/React-CalorieTrack/static/js/2.9498830b.chunk.js",
+    "static/js/2.9498830b.chunk.js.map": "/React-CalorieTrack/static/js/2.9498830b.chunk.js.map",
+    "index.html": "/React-CalorieTrack/index.html",
+    "precache-manifest.b011245313bca98c0393ec373cc908ff.js": "/React-CalorieTrack/precache-manifest.b011245313bca98c0393ec373cc908ff.js",
+    "service-worker.js": "/React-CalorieTrack/service-worker.js",
+    "static/js/2.9498830b.chunk.js.LICENSE.txt": "/React-CalorieTrack/static/js/2.9498830b.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7b6bfdd9.js",
+    "static/js/2.9498830b.chunk.js",
+    "static/js/main.024029e6.chunk.js"
+  ]
+}
