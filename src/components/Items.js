@@ -8,12 +8,16 @@ function Items(props) {
     }
 
     return (
-            <ul>
+            <ul style={lists}>
                 {props.state.length > 0 ? (<>{props.state.map(item =>(
                 <Item key={item.id} item={item} onEditItem={props.onEditItem} />
                 ))}</>) : <li>Log not found</li> }
             </ul>
     )
+}
+const lists = {
+    display: 'flex',
+    flexDirection: 'column'
 }
 
 Items.propTypes = {

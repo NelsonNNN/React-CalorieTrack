@@ -1,4 +1,5 @@
 import React from 'react';
+import './style.css'
 
 const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
   const pageNumbers = [];
@@ -8,11 +9,11 @@ const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
   }
 
   return (
-    <nav style={getStyle}>
-      <ul style={ulist}>
+    <nav className='getStyle'>
+      <ul className='ulist'>
         {pageNumbers.map(number => (
-          <li key={number} >
-            <button style={listStyle} onClick={() => paginate(number)} >
+          <li style={{listStyle: 'none'}} key={number} >
+            <button className='listStyle' onClick={() => paginate(number)} >
               {number}
             </button>
           </li>
@@ -21,22 +22,4 @@ const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
     </nav>
   );
 };
-const getStyle ={
-  backgroundColor:'transparent',
-  border:'none'
-}
-const ulist={
-  display:'flex',
-  flexWrap:'wrap'
-}
-const listStyle={
-  width:'3rem',
-  height:'3rem',
-  color:'white',
-  backgroundColor:'blue',
-  textAlign:'center',
-  boxShadow:'1px 1px 2px black',
-  marginRight:'3px'
-}
-
 export default Pagination;

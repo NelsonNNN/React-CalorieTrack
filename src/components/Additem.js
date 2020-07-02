@@ -1,5 +1,6 @@
 import React, {useState, useEffect, useRef} from 'react'
 import PropTypes from 'prop-types'
+import './style.css'
 
 const firstState = {
         title:'',
@@ -56,17 +57,17 @@ function Additem(props) {
 
     return (
         <div>
-            <div className="input-field col s6">
-                <input type='text' name='title' placeholder='Add Title' value={state.title} onChange={onType}/>
-                <label>Title</label>
+            <div className='inputDiv'>
+                <label className='label'>Title</label>
+                <input className='inputField' type='text' name='title' placeholder='Add Title' value={state.title} onChange={onType}/>
             </div>
-            <div className="input-field col s6">
-                <input type="text" name='body' placeholder='Add body' value={state.body} onChange={onType}/>
-                <label>body</label>
+            <div className='inputDiv'>
+                <label className='label'>Content</label>
+                <textarea className='inputField content' type="text" name='body' placeholder='Add body' value={state.body} onChange={onType}/>
             </div>
-            <button style={{display:'inline', marginRight:'1rem'}} ref={add} onClick={onSubmit} className="add-btn btn green darken-1">Add Blog</button>
-            <button style={{display:'none',marginRight:'1rem'}}  ref={update} onClick={onUpdate} className="update-btn btn  lime darken-1">Update Blog</button>
-            <button style={{display:'none',marginRight:'1rem'}}  ref={deleted} onClick={onDelete} className="delete-btn btn  blue-grey darken-4">Delete Blog</button>
+            <button className='button' style={{display:'inline', background:'#40ff00'}} ref={add} onClick={onSubmit}>Add Blog</button>
+            <button className='button' style={{display:'none', background:'#ffbf00'}}  ref={update} onClick={onUpdate}>Update Blog</button>
+            <button className='button' style={{display:'none', background:'#e61919'}}  ref={deleted} onClick={onDelete}>Delete Blog</button>
         </div>
     )
 }

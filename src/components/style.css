@@ -1,0 +1,59 @@
+
+body{
+    background: radial-gradient(circle, rgba(242,245,210,1) 25%, rgba(255,255,0,1) 75%);
+    margin: 1rem;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.inputDiv{
+    text-align: center;
+    border: none;
+    margin: 1rem;
+}
+.label{
+    font-weight: 400;
+    font-size: 1rem;
+}
+.inputField{
+    width: 100%;
+    border-radius: 5px;
+    padding:1rem;
+}
+.content{
+    height:10rem;
+}
+.button {
+    padding:0.5rem;
+    margin-right: 1rem;
+    color: white;
+    border-radius: 3px;
+}
+.navDiv{
+    background:#0000ff;
+    padding:1rem;
+    text-align:center;
+    color:white;
+  }
+.heading{
+    text-decoration:none;
+    font-size:2rem;
+}
+.getStyle {
+    background-color:transparent;
+    border:none;
+  }
+.ulist{
+    display:flex;
+    flex-wrap:wrap;
+  }
+ .listStyle{
+    width:3rem;
+    height:3rem;
+    color:white;
+    background-color:blue;
+    text-align:center;
+    box-shadow:1px 1px 2px black;
+    margin-right:3px;
+  }
+  

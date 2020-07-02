@@ -4,6 +4,7 @@ import Items from './components/Items';
 // import {getFromStorage, storeInStorage} from './components/Storage'
 import {post, deletes, put, get} from './components/easyHttp'
 import Pagination from './components/Pagination';
+import './components/style.css'
 
 function App() {
 
@@ -55,10 +56,8 @@ function App() {
   return (
     <div>
       <nav>
-        <div className="nav-wrapper blue">
-            <div className="container">
-                <a href="nelsonnnn.github.io" className="brand-logo">Create Blog and Edit</a>
-            </div>
+        <div className='navDiv'>
+          <a className='heading' href="nelsonnnn.github.io">Create Blog and Edit</a>
         </div>
       </nav><br/>
       <Additem addItem={addItem} updateItem={updateItem} deleteItem={deleteItem} data={data} />
