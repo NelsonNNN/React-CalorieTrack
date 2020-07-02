@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/React-CalorieTrack/static/css/main.c1ffcf59.chunk.css",
-    "main.js": "/React-CalorieTrack/static/js/main.d136c3f9.chunk.js",
-    "main.js.map": "/React-CalorieTrack/static/js/main.d136c3f9.chunk.js.map",
+    "main.css": "/React-CalorieTrack/static/css/main.9be8e9ec.chunk.css",
+    "main.js": "/React-CalorieTrack/static/js/main.34532c3e.chunk.js",
+    "main.js.map": "/React-CalorieTrack/static/js/main.34532c3e.chunk.js.map",
     "runtime-main.js": "/React-CalorieTrack/static/js/runtime-main.7b6bfdd9.js",
     "runtime-main.js.map": "/React-CalorieTrack/static/js/runtime-main.7b6bfdd9.js.map",
     "static/js/2.ecafae70.chunk.js": "/React-CalorieTrack/static/js/2.ecafae70.chunk.js",
     "static/js/2.ecafae70.chunk.js.map": "/React-CalorieTrack/static/js/2.ecafae70.chunk.js.map",
     "index.html": "/React-CalorieTrack/index.html",
-    "precache-manifest.9c5c32134cdfbfa1402dfe5871d20b38.js": "/React-CalorieTrack/precache-manifest.9c5c32134cdfbfa1402dfe5871d20b38.js",
+    "precache-manifest.795c25b03952ca008009939b2a8cdbfd.js": "/React-CalorieTrack/precache-manifest.795c25b03952ca008009939b2a8cdbfd.js",
     "service-worker.js": "/React-CalorieTrack/service-worker.js",
-    "static/css/main.c1ffcf59.chunk.css.map": "/React-CalorieTrack/static/css/main.c1ffcf59.chunk.css.map",
+    "static/css/main.9be8e9ec.chunk.css.map": "/React-CalorieTrack/static/css/main.9be8e9ec.chunk.css.map",
     "static/js/2.ecafae70.chunk.js.LICENSE.txt": "/React-CalorieTrack/static/js/2.ecafae70.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.7b6bfdd9.js",
     "static/js/2.ecafae70.chunk.js",
-    "static/css/main.c1ffcf59.chunk.css",
-    "static/js/main.d136c3f9.chunk.js"
+    "static/css/main.9be8e9ec.chunk.css",
+    "static/js/main.34532c3e.chunk.js"
   ]
 }
