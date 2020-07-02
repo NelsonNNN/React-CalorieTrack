@@ -57,7 +57,7 @@ function App() {
     <div>
       <nav>
         <div className='navDiv'>
-          <a className='heading' href="nelsonnnn.github.io">Create Blog and Edit</a>
+          <h1 className='heading'>Create Blog and Edit</h1>
         </div>
       </nav><br/>
       <Additem addItem={addItem} updateItem={updateItem} deleteItem={deleteItem} data={data} />
